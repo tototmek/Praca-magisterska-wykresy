@@ -17,7 +17,6 @@ def setup_latex_plots():
         "text.latex.preamble": latex_preamble,
         # "mathtext.fontset": "cm" 
     })
-    plt.figure(figsize=(TEXT_WIDTH, 0.6*TEXT_WIDTH))
 
 def save_plot():
     script_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]

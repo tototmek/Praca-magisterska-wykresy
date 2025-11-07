@@ -5,6 +5,7 @@ from utils import *
 
 def generate_plot():
     setup_latex_plots()
+    plt.figure(figsize=(TEXT_WIDTH, 0.4*TEXT_WIDTH))
     # plt.title("Sygnał wyjściowy czujnika -- test z żelkiem misiem")
     plt.xlabel(r"Numer pomiaru\quad $k$")
     plt.ylabel(r"Czas ładowania bramki\quad $n_L$ [iteracje]")
