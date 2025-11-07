@@ -3,15 +3,21 @@ import sys
 import matplotlib.pyplot as plt
 import pandas as pd
 
-TEXT_WIDTH = 6.1023622
+TEXT_WIDTH = 6.5
 
 def setup_latex_plots():
+    latex_preamble = r"""
+        \usepackage[utf8]{inputenc} 
+        \usepackage[T1]{fontenc}
+        """
     plt.rcParams.update({
         "text.usetex": True,
         "font.family": "serif",
         "font.serif": ["Computer Modern Roman"],
+        "text.latex.preamble": latex_preamble,
         # "mathtext.fontset": "cm" 
     })
+    plt.figure(figsize=(TEXT_WIDTH, 0.6*TEXT_WIDTH))
 
 def save_plot():
     script_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]

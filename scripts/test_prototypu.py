@@ -4,10 +4,10 @@ from utils import *
 
 def generate_plot():
     setup_latex_plots()
-    plt.figure(figsize=(TEXT_WIDTH, 0.6*TEXT_WIDTH))
-    plt.title("Przebieg wyjścia czujnika")
-    plt.xlabel(r"Numer pomiaru $k$")
-    plt.ylabel(r"Czas ładowania bramki $n_L$ [iteracje]")
+    # plt.title(r"Sygnał wyjściowy czujnika -- test z wilgotną gąbką")
+    plt.xlabel(r"Numer pomiaru\quad $k$")
+    plt.ylabel(r"Czas ładowania bramki\quad $n_L$ [iteracje]")
+    plt.ylim([430, 460])
     data = load_csv_column("/home/tototmek/Studia/Magisterka/code/bee_counter_firmware/data/old/measurement.csv", "left_gate_raw")
     data = data[0::6]
     plt.plot(data)
