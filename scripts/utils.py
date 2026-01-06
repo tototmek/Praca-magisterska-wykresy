@@ -2,6 +2,7 @@ import os
 import sys
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 TEXT_WIDTH = 6.5
 
@@ -28,5 +29,4 @@ def save_plot():
 def load_csv_column(file_path, column_name):
     df = pd.read_csv(file_path)
     column_series = df[column_name]
-    column_list = column_series.tolist()
-    return column_list
+    return np.array(column_series)
