@@ -10,6 +10,7 @@ def setup_latex_plots():
     latex_preamble = r"""
         \usepackage[utf8]{inputenc} 
         \usepackage[T1]{fontenc}
+        \usepackage{fourier}
         """
     plt.rcParams.update({
         "text.usetex": True,
