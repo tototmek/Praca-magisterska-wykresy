@@ -35,7 +35,7 @@ def generate_plot():
     data_raw = data[data_range_small[0]:data_range_small[1]]
     data = moving_average(data_raw, filter_window)
 
-    plt.figure(figsize=(TEXT_WIDTH, 0.3*TEXT_WIDTH))
+    plt.figure(figsize=(TEXT_WIDTH, 0.25*TEXT_WIDTH))
     plt.plot(data_raw, c="black", lw=0.75, label="Brak filtrowania")
     plt.ylabel(r'$x(k)$')
     # plt.ylim((min(data)-0.3, max(data)+0.3))
