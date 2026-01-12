@@ -16,7 +16,7 @@ def generate_plot():
     leave_times = data['leave_ts']
     static_up_threshold = data['up_threshold']
     static_bottom_threshold = data['bottom_threshold']
-    static_correlation_signal = data['correlation_signal']
+    static_correlation_signal = -data['correlation_signal']
     static_fsm_enter_ts = data['fsm_enter_ts']
     static_fsm_leave_ts = data['fsm_leave_ts']
     data.close()
@@ -24,7 +24,7 @@ def generate_plot():
     data = np.load("src/correlation-adaptive-bad.npz")
     adaptive_up_threshold = data['up_threshold']
     adaptive_bottom_threshold = data['bottom_threshold']
-    adaptive_correlation_signal = data['correlation_signal']
+    adaptive_correlation_signal = -data['correlation_signal']
     adaptive_fsm_enter_ts = data['fsm_enter_ts']
     adaptive_fsm_leave_ts = data['fsm_leave_ts']
     data.close()
@@ -42,8 +42,10 @@ def generate_plot():
     for ts in list(enter_times) + list(leave_times):
         ax0.axvline(x=ts, color='gray', ls=':', lw=0.5)
         ax1.axvline(x=ts, color='gray', ls=':', lw=0.5)
+        ax2.axvline(x=ts, color='gray', ls=':', lw=0.5)
     ax0.axhline(y=0, color='gray', ls='--', lw=0.5)
     ax1.axhline(y=0, color='gray', ls='--', lw=0.5)
+    ax2.axhline(y=0, color='gray', ls='--', lw=0.5)
 
 
     ax0_pinheight = np.max(detrended) * 1.1

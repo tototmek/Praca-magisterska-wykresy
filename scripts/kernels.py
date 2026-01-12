@@ -30,8 +30,8 @@ def generate_plot():
     setup_latex_plots()
 
     plt.figure(figsize=(0.8*TEXT_WIDTH, 0.3*TEXT_WIDTH))
-    plt.plot(kernel, c="#b0b0b0", lw=1)
-    plt.plot(synthetic_kernel, c="black", lw=0.75)
+    plt.plot(-kernel, c="#b0b0b0", lw=1)
+    plt.plot(-synthetic_kernel, c="black", lw=0.75)
     plt.xlabel(r'$m$')
     plt.ylabel(r'$w(m)$')
     plt.legend(['(a)', '(b)'], frameon=False)

@@ -14,7 +14,7 @@ def generate_plot():
     detrended = data['detrended']
     up_threshold = data['up_threshold']
     bottom_threshold = data['bottom_threshold']
-    correlation_signal = data['correlation_signal']
+    correlation_signal = -data['correlation_signal']
     fsm_enter_ts = data['fsm_enter_ts']
     fsm_leave_ts = data['fsm_leave_ts']
     enter_times = data['enter_ts']
