@@ -14,7 +14,7 @@ def generate_plot():
     data = np.array(data[0::6])
     start = data[0]
     data = 0.35*(data - start) + start
-    plt.plot(data)
+    plt.plot(data, c="k", lw=0.75)
     save_plot()
 
 if __name__=="__main__":

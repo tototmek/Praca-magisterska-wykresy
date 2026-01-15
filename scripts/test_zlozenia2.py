@@ -20,13 +20,13 @@ def generate_plot():
     fig, axes = plt.subplots(4, 1, sharex=True, figsize = (TEXT_WIDTH, 6))
 
     for i in range(4):
-        idx = mapping[i]
+        idx = mapping[i+4]
         left_gate_raw = load_csv_column(DATA_PATH, f"ch{idx}_left_gate_raw")
         right_gate_raw = load_csv_column(DATA_PATH, f"ch{idx}_right_gate_raw")
         data[idx] = left_gate_raw - right_gate_raw
         data[idx] = np.convolve(data[idx], np.ones(filter_window_size)/filter_window_size, mode="same")
-        axes[i].plot(time[70:-50], data[idx][70:-50], label=f"Ch{i}", c="black", lw=0.5)
-        axes[i].set_ylabel(f'$x_{i}(t)$')
+        axes[i].plot(time[70:-50], data[idx][70:-50], label=f"Ch{i+4}", c="black", lw=0.5)
+        axes[i].set_ylabel(f'$x_{i+4}(t)$')
     
     plt.xlabel(r'$t [s]$')
 

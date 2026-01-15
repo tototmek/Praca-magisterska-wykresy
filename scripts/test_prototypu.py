@@ -11,7 +11,7 @@ def generate_plot():
     plt.ylim([430, 460])
     data = load_csv_column("/home/tototmek/Studia/Magisterka/code/bee_counter_firmware/data/old/measurement.csv", "left_gate_raw")
     data = data[0::6]
-    plt.plot(data)
+    plt.plot(data, c="k", lw=0.75)
     save_plot()
 
 if __name__=="__main__":

@@ -52,7 +52,10 @@ def generate_plot():
     
     plt.ylabel(f'Bilans pszczół')
     plt.xlabel(r'$t [s]$')
-    plt.legend(ncol=3, fancybox=False)
+    leg = plt.legend(ncol=3, fancybox=False)
+
+    for line in leg.get_lines():
+        line.set_linewidth(1.5)
     
     save_plot()
 
